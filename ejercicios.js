@@ -42,11 +42,20 @@ console.log(`El valor final del contador es: ${contador}`);
 // (20+10) /5+3∗2−4(20 + 10) / 5 + 3 * 2 - 4(20+10) /5+3∗2−4 
 // Tu reto es implementarla en JavaScript y analizar paso a paso en qué orden se ejecutan las operaciones hasta llegar al resultado final. 
 
-let resultado = (20 + 10) / 5 + 3 * 2 - 4 (20 + 10) / 5 + 3 * 2 - 4 ( 20 + 10 ) / 5 + 3 * 2 - 4;
+let resultado = (20 + 10) / 5 + 3 * 2 - 4 * (20 + 10) / 5 + 3 * 2 - 4 * ( 20 + 10 ) / 5 + 3 * 2 - 4;
 console.log(`El resultado de la expresión es: ${resultado}`);
 
-// 1. Parentesis: (20 + 10) = 30
-// 2. Division: 30 / 5 = 6
-// 3. Multiplicacion: 3 * 2 = 6
-// 4. Multiplicacion: 4 * 30 / 5 = 24
-// 5. Suma y resta: 6 + 6 - 24 = -12
+// Evaluar paréntesis: (20 + 10) → 30.
+// Sustituir y calcular multiplicaciones/divisiones de izquierda a derecha:
+// 30 / 5 → 6
+// 3 * 2 → 6
+// 4 * 30 / 5 → (4*30)/5 → 120/5 → 24
+// Reescribir la expresión con esos valores: 6 + 6 - 24 + 6 - 24 + 6 - 4
+// Sumar y restar de izquierda a derecha:
+// 6 + 6 = 12
+// 12 - 24 = -12
+// -12 + 6 = -6
+// -6 - 24 = -30
+// -30 + 6 = -24
+// -24 - 4 = -28
+// Resultado final: -28
